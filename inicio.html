@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/css/style.css">
+    <title>Lista de atividades</title>
+</head>
+<body>
+<header class="cabeçalho">
+    <nav class="menu">
+        <ul>
+            <li><a href="inicio.html" class="button">Home</a></li>
+            <li><a href="att01.html" class="button">Att 01</a></li>
+            <li><a href="att02.html" class="button">Att 02</a></li>
+            <li><a href="att03.html" class="button">Att 03</a></li>
+            <li><a href="att04.html" class="button">Att 04</a></li>
+            <li><a href="att05.html" class="button">Att 05</a></li>
+        </ul>
+     </nav>
+  </header>
+
+<h1> :)</h1>
+
+<div class="game-container">
+    <div class="game">
+        <div class="target"></div>
+    </div>
+    <p class="score">Pontuação: <span id="score">0</span></p>
+</div>
+
+
+<script>
+
+const game = document.querySelector('.game');
+const target = document.querySelector('.target');
+const scoreElement = document.getElementById('score');
+
+let score = 0;
+
+function getRandomPosition() {
+    const gameRect = game.getBoundingClientRect();
+    const targetSize = target.getBoundingClientRect();
+
+    const maxX = gameRect.width - targetSize.width;
+    const maxY = gameRect.height - targetSize.height;
+
+    const randomX = Math.floor(Math.random() * maxX);
+    const randomY = Math.floor(Math.random() * maxY);
+
+    return { x: randomX, y: randomY };
+}
+
+target.addEventListener('click', () => {
+    score++;
+    scoreElement.textContent = score;
+    const newPosition = getRandomPosition();
+    target.style.left = `${newPosition.x}px`;
+    target.style.top = `${newPosition.y}px`;
+});
+
+let interval = setInterval(() => {
+    const newPosition = getRandomPosition();
+    target.style.left = `${newPosition.x}px`;
+    target.style.top = `${newPosition.y}px`;
+}, 1500);
+</script>
+
+</body>
+</html>

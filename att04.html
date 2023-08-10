@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/css/style.css">
+    <title>Lista JS</title>
+</head>
+<body>
+<header class="cabeçalho">
+    <nav class="menu">
+        <ul>
+            <li><a href="inicio.html" class="button">Home</a></li>
+            <li><a href="att01.html" class="button">Att 01</a></li>
+            <li><a href="att02.html" class="button">Att 02</a></li>
+            <li><a href="att03.html" class="button">Att 03</a></li>
+            <li><a href="att04.html" class="button">Att 04</a></li>
+            <li><a href="att05.html" class="button">Att 05</a></li>
+        </ul>
+    </nav>
+</header>  
+
+<div class="imagem">
+    <img src="../04.png" alt="">
+</div>
+
+<script>
+ 
+//04. Escreva um algoritmo para ler o nome e a idade de uma pessoa, e exibir quantos dias de vida ela possui. Considere sempre anos completos, e que um ano possui 365 dias. Ex: uma pessoa com 19 anos possui 6935 dias de vida; veja um exemplo de saída: MARIA, VOCÊ JÁ VIVEU 6935 DIAS
+
+var Idade = +prompt("Qual a sua idade?");
+var Nome = prompt("Qual o seu nome?");
+
+var IdadeDias = (Idade * 365);
+
+alert (`${Nome}, você viveu, aproximadamente, ${IdadeDias} dias!`);
+            
+    </script>
+  
+  
+</body>
+</html>
